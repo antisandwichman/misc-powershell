@@ -254,14 +254,6 @@ function Block-SenderByAddress{
     Read-Host -Prompt "Press the Enter key to exit"
 }
 
-function Add-UserToStatusPage{
-    Read-Host -Prompt "This function is not supported"
-    # Write-Host "Enter email for user to be added to status page below."
-    # $email = Read-Host -Prompt "Email"
-    # $verbatim = '{"subscriber": {"email": "' + $email + '","skip_confirmation_notification": true,"page_access_user": "string"}}' 
-    # curl --location 'https://api.statuspage.io/v1/pages/31g063bx3kxk/subscribers' --header 'Content-Type: application/json' --header 'Authorization: Bearer f3203035-83e9-4130-8107-93d6c6c2f85a' --data-raw $verbatim
-}
-
 
 function Add-ScriptAsApp {
     # Add reference to System.Windows.Forms namespace
@@ -435,36 +427,7 @@ function Get-ADUserLastLogin {
     Get-ADUser -Server $s -Identity $username -Properties * | select *logon*
 }
 
-function Add-NumberToStatusPage{
-    Read-Host -Prompt "This function is not supported"
-    # param(
-    #     [string]$number
-    # )
-    # # Write-Host "Reached function"
 
-    # $verbatim = '{"subscriber": {"phone_country": "US","phone_number": "' + $number + '","skip_confirmation_notification": true,"page_access_user": "string"}}' 
-    # curl --location 'https://api.statuspage.io/v1/pages/31g063bx3kxk/subscribers' --header 'Content-Type: application/json' --header 'Authorization: Bearer f3203035-83e9-4130-8107-93d6c6c2f85a' --data-raw $verbatim
-    # Read-Host -Prompt "`nPress Enter to continue"
-
-}
-
-function Add-AFRChocoRepository{
-    choco source add -n=Internal -s="\\fs\it\choco"
-    Read-Host -Prompt "Press the Enter key to exit"
-}
-
-function List-AFRInternalRepository{
-    choco search -s=Internal
-    Read-Host -Prompt "Press the Enter key to exit"
-}
-
-function Install-AFRInternalPackage{
-    param(
-        [string]$package
-    )
-    choco install $package -s=Internal
-    Read-Host -Prompt "Press the Enter key to exit"
-}
 
 function Convert-NewlineToPipe () {
     $array = @()
@@ -539,48 +502,6 @@ function Render-Menu{
 
 function ChocoMenu{
     Read-Host -Prompt "This functionality has been removed"
-    # $ChocoMenuHeader = @(
-    #     "Chocolatey Commands", 
-    #     "----------",
-    #     "PLEASE NOTE: You should be running the admin script as Administrator in order to use any of these commands",
-    #     "----------"
-    # )
-    # $ChocoMenuItems = @(
-    #     "Install Chocolatey",
-    #     "Add AFR internal Chocolatey repository",
-    #     "List AFR internal Chocolatey packages",
-    #     "Install AFR package"
-    # )
-
-    # $ChocoSubMenu = @(
-    #     "----------",
-    #     "q. Quit"
-    # )
-
-    # $choice = ""
-    # while ($choice -ne "q"){
-    #     clear
-    #     Render-Menu -header $ChocoMenuHeader -entries $ChocoMenuItems
-    #     Render-Menu -header $ChocoSubMenu
-    #     $choice = Read-Host -Prompt "Selection"
-
-    #     switch($choice){
-    #         1 {
-    #             Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-    #             Read-Host -Prompt "Press Enter to continue"
-    #         }
-    #         2 {
-    #             Add-AFRChocoRepository
-    #         }
-    #         3 {
-    #             List-AFRInternalRepository
-    #         }
-    #         4 {
-    #             $package = Read-Host -Prompt "Package"
-    #             Install-AFRInternalPackage -package $package
-    #         }
-    #     }
-    # }
 }
 
 function ADmenu{
